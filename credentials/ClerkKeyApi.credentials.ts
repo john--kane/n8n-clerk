@@ -17,12 +17,5 @@ export class ClerkKeyApi implements ICredentialType {
 			typeOptions: { password: true },
 			default: '',
 		},
-		{
-			displayName: 'Publishable Key',
-			name: 'publishableKey',
-			type: 'string',
-			typeOptions: { password: true },
-			default: '',
-		},
 	];
 }
