@@ -5,6 +5,9 @@
 1. Set the container flag for external npm packages e.g. NODE_FUNCTION_ALLOW_EXTERNAL=\* for all or just add @clerk/backend
 2. To install the package on the container run `docker exec -it <container-name> npm install @clerk/backend`
 
+Shout out: https://github.com/oriondesign2015/n8n-nodes-evolution-api for the inspiration on project structure.
+
+<!--
 # n8n-nodes-starter
 
 This repo contains example nodes to help you get started building your own custom integrations for [n8n](https://n8n.io). It includes the node linter and other dependencies.
@@ -50,4 +53,4 @@ Refer to our [documentation on creating nodes](https://docs.n8n.io/integrations/
 
 ## License
 
-[MIT](https://github.com/n8n-io/n8n-nodes-starter/blob/master/LICENSE.md)
+[MIT](https://github.com/n8n-io/n8n-nodes-starter/blob/master/LICENSE.md) -->

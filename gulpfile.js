@@ -14,3 +14,12 @@ function copyIcons() {
 
 	return src(credSource).pipe(dest(credDestination));
 }
+
+// Task to copy files to n8n custom directory
+task('copy:n8n', function () {
+	// Clear the destination directory
+	const destPath = path.join(process.env.HOME, '.n8n/custom');
+	const fs = require('fs-extra');
+	fs.emptyDirSync(destPath);
+	return src('dist/**/*').pipe(dest(path.join(process.env.HOME, '.n8n/custom')));
+});

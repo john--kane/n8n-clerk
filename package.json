@@ -22,6 +22,7 @@
 	"scripts": {
 		"build": "npx rimraf dist && tsc && gulp build:icons && gulp copy:n8n",
 		"dev": "tsc --watch",
+		"watch": "nodemon --watch nodes --watch credentials --ext ts --exec \"pnpm run build\"",
 		"format": "prettier nodes credentials --write",
 		"lint": "eslint nodes credentials package.json",
 		"lintfix": "eslint nodes credentials package.json --fix",
@@ -36,16 +37,16 @@
 			"dist/credentials/ClerkKeyApi.credentials.js"
 		],
 		"nodes": [
-			"dist/nodes/Clerk/ClerkGetUser.node.js",
-			"dist/nodes/Clerk/ClerkGetOrganisation.node.js",
-			"dist/nodes/Clerk/ClerkGetInvitations.node.js"
+			"dist/nodes/Clerk/ClerkApi.node.js"
 		]
 	},
 	"devDependencies": {
 		"@typescript-eslint/parser": "~8.32.0",
 		"eslint": "^8.57.0",
 		"eslint-plugin-n8n-nodes-base": "^1.16.3",
+		"fs-extra": "^11.3.0",
 		"gulp": "^5.0.0",
+		"nodemon": "^3.1.10",
 		"prettier": "^3.5.3",
 		"rimraf": "^6.0.1",
 		"typescript": "^5.8.2"
