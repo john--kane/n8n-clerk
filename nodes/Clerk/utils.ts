@@ -52,6 +52,11 @@ export function Failure(error: Error, ef: IExecuteFunctions, errorCode: string =
 		},
 	};
 
+	ef.logger.error(`Error in Clerk node: ${errorData.error.message}`, {
+		code: errorData.error.code,
+		details: errorData.error.details,
+		timestamp: errorData.error.timestamp,
+	});
 	if (!ef.continueOnFail()) {
 		throw new NodeOperationError(ef.getNode(), error.message, {
 			message: errorData.error.message,

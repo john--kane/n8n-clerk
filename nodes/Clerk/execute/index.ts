@@ -1,8 +1,20 @@
 import { IExecuteFunctions } from 'n8n-workflow';
+import { createAllowlistIdentifier } from './allowlist/createAllowlistIdentifier';
+import { deleteAllowlistIdentifier } from './allowlist/deleteAllowlistIdentifier';
+import { getAllowlistIdentifierList } from './allowlist/getAllowlistIdentifierList';
+import { deleteDomain } from './domains/deleteDomain';
+import { createInvitation } from './invitations/createInvitation';
+import { getInvitationList } from './invitations/getInvitationList';
+import { revokeInvitation } from './invitations/revokeInvitation';
 import { getOrganization } from './organisation/getOrganisation';
 import { getOrganizationList } from './organisation/getOrganisationList';
 import { getOrganizationInvitation } from './organisation/getOrganizationInvitation';
 import { getOrganizationMembershipList as getOrgOrganizationMembershipList } from './organisation/getOrganizationMembershipList';
+import { getSession } from './sessions/getSession';
+import { getSessionList } from './sessions/getSessionList';
+import { getToken } from './sessions/getToken';
+import { revokeSession } from './sessions/revokeSession';
+import { verifySession } from './sessions/verifySession';
 import { banUser } from './user/banUser';
 import { createUser } from './user/createUser';
 import { deleteUser } from './user/deleteUser';
@@ -48,5 +60,25 @@ export const resourceOperationsFunctions: ResourceOperationFunctions = {
 		'get-organization-invitation': getOrganizationInvitation,
 		'get-org-organization-membership-list': getOrgOrganizationMembershipList,
 		'get-organization-invitation-list': getOrganizationInvitation,
+	},
+	'allowlist-api': {
+		'get-allowlist-identifier-list': getAllowlistIdentifierList,
+		'create-allowlist-identifier': createAllowlistIdentifier,
+		'delete-allowlist-identifier': deleteAllowlistIdentifier,
+	},
+	'domain-api': {
+		'delete-domain': deleteDomain,
+	},
+	'session-api': {
+		'get-session': getSession,
+		'get-session-list': getSessionList,
+		'get-token': getToken,
+		'verify-session': verifySession,
+		'revoke-session': revokeSession,
+	},
+	'invitation-api': {
+		'get-invitation-list': getInvitationList,
+		'create-invitation': createInvitation,
+		'revoke-invitation': revokeInvitation,
 	},
 };
