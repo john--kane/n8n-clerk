@@ -17,3 +17,10 @@ export enum OAuthProviderList {
 	Apple = 'apple',
 	X = 'x',
 }
+
+export const OrganizationInvitationStatus = {
+	Pending: 'pending',
+	Accepted: 'accepted',
+	Revoked: 'revoked',
+	Expired: 'expired',
+} as const;

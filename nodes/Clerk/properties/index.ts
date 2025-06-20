@@ -1,5 +1,6 @@
 import { INodeProperties } from 'n8n-workflow';
-import { organizationFields } from './organisation.fields';
+
+import { organizationFields } from './organization.fields';
 import { organizationOperationsOptions } from './organization.operations';
 import { userFields } from './user.fields';
 import { userOperationsOptions } from './user.operations';

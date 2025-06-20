@@ -22,6 +22,9 @@ export const userFields: INodeProperties[] = [
 					'unban-user',
 					'lock-user',
 					'unlock-user',
+					'update-user',
+					'delete-user',
+					'disable-user-mfa',
 				],
 			},
 		},
@@ -64,7 +67,85 @@ export const userFields: INodeProperties[] = [
 		displayOptions: {
 			show: {
 				resource: ['users-api'],
-				operation: ['verify-password'],
+				operation: ['verify-password', 'create-user', 'update-user'],
+			},
+		},
+	},
+	{
+		displayName: 'First Name',
+		name: 'firstName',
+		type: 'string',
+		default: '',
+		description: 'The first name of the user',
+		displayOptions: {
+			show: {
+				resource: ['users-api'],
+				operation: ['create-user', 'update-user'],
+			},
+		},
+	},
+	{
+		displayName: 'Last Name',
+		name: 'lastName',
+		type: 'string',
+		default: '',
+		description: 'The last name of the user',
+		displayOptions: {
+			show: {
+				resource: ['users-api'],
+				operation: ['create-user', 'update-user'],
+			},
+		},
+	},
+	{
+		displayName: 'Email Address',
+		name: 'emailAddress',
+		type: 'string',
+		default: '',
+		description: 'The email address of the user',
+		displayOptions: {
+			show: {
+				resource: ['users-api'],
+				operation: ['create-user'],
+			},
+		},
+	},
+	{
+		displayName: 'External ID',
+		name: 'externalId',
+		type: 'string',
+		default: '',
+		description: 'The external ID of the user',
+		displayOptions: {
+			show: {
+				resource: ['users-api'],
+				operation: ['update-user'],
+			},
+		},
+	},
+	{
+		displayName: 'Public Metadata',
+		name: 'publicMetadata',
+		type: 'json',
+		default: '{}',
+		description: 'The public metadata for the user',
+		displayOptions: {
+			show: {
+				resource: ['users-api'],
+				operation: ['create-user', 'update-user'],
+			},
+		},
+	},
+	{
+		displayName: 'Delete Self Enabled',
+		name: 'deleteSelfEnabled',
+		type: 'boolean',
+		default: false,
+		description: 'Whether the user can delete their own account',
+		displayOptions: {
+			show: {
+				resource: ['users-api'],
+				operation: ['update-user'],
 			},
 		},
 	},

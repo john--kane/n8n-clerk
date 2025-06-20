@@ -83,6 +83,34 @@ export const userOperationsOptions: INodeProperties = {
 			description: 'Unlocks a user',
 			value: 'unlock-user',
 		},
+		{
+			// Create User
+			name: 'Create User',
+			action: 'Create user',
+			description: 'Creates a new user',
+			value: 'create-user',
+		},
+		{
+			// Update User
+			name: 'Update User',
+			action: 'Update user',
+			description: 'Updates an existing user',
+			value: 'update-user',
+		},
+		{
+			// Delete User
+			name: 'Delete User',
+			action: 'Delete user',
+			description: 'Deletes an existing user',
+			value: 'delete-user',
+		},
+		{
+			// Disable User MFA
+			name: 'Disable User MFA',
+			action: 'Disable user MFA',
+			description: 'Disables multi-factor authentication for a user',
+			value: 'disable-user-mfa',
+		},
 	],
 	default: 'get-user',
 };
