@@ -3,6 +3,10 @@ import { createAllowlistIdentifier } from './allowlist/createAllowlistIdentifier
 import { deleteAllowlistIdentifier } from './allowlist/deleteAllowlistIdentifier';
 import { getAllowlistIdentifierList } from './allowlist/getAllowlistIdentifierList';
 import { deleteDomain } from './domains/deleteDomain';
+import { createEmailAddress } from './emailaddresses/createEmailAddress';
+import { deleteEmailAddress } from './emailaddresses/deleteEmailAddress';
+import { getEmailAddress } from './emailaddresses/getEmailAddress';
+import { updateEmailAddress } from './emailaddresses/updateEmailAddress';
 import { createInvitation } from './invitations/createInvitation';
 import { getInvitationList } from './invitations/getInvitationList';
 import { revokeInvitation } from './invitations/revokeInvitation';
@@ -80,5 +84,11 @@ export const resourceOperationsFunctions: ResourceOperationFunctions = {
 		'get-invitation-list': getInvitationList,
 		'create-invitation': createInvitation,
 		'revoke-invitation': revokeInvitation,
+	},
+	'emailaddresses-api': {
+		'get-email-address': getEmailAddress,
+		'create-email-address': createEmailAddress,
+		'delete-email-address': deleteEmailAddress,
+		'update-email-address': updateEmailAddress,
 	},
 };

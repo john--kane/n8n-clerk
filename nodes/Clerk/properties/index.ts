@@ -4,6 +4,8 @@ import { allowlistFields } from './allowlist.fields';
 import { allowlistOperationsOptions } from './allowlist.operations';
 import { domainFields } from './domain.fields';
 import { domainOperationsOptions } from './domain.operations';
+import { emailAddressFields } from './emailaddresses.fields';
+import { emailAddressOperationsOptions } from './emailaddresses.operations';
 import { invitationFields } from './invitation.fields';
 import { invitationOperationsOptions } from './invitation.operations';
 import { organizationFields } from './organization.fields';
@@ -44,6 +46,10 @@ const clerkOptions: INodeProperties = {
 			name: 'Invitation API',
 			value: 'invitation-api',
 		},
+		{
+			name: 'Email Addresses API',
+			value: 'emailaddresses-api',
+		},
 	],
 	default: 'users-api',
 };
@@ -68,4 +74,7 @@ export const clerkNodeProperties = [
 	// Invitation Operations
 	invitationOperationsOptions,
 	...invitationFields,
+	// Email Addresses Operations
+	emailAddressOperationsOptions,
+	...emailAddressFields,
 ] as INodeProperties[];

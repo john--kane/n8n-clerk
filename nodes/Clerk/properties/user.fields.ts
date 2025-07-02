@@ -72,6 +72,19 @@ export const userFields: INodeProperties[] = [
 		},
 	},
 	{
+		displayName: 'Apply Password Policies',
+		name: 'ignorePasswordPolicies',
+		type: 'boolean',
+		default: true,
+		description: 'Whether to ignore password policies for the user',
+		displayOptions: {
+			show: {
+				resource: ['users-api'],
+				operation: ['create-user', 'update-user'],
+			},
+		},
+	},
+	{
 		displayName: 'First Name',
 		name: 'firstName',
 		type: 'string',
@@ -135,6 +148,21 @@ export const userFields: INodeProperties[] = [
 				operation: ['create-user', 'update-user'],
 			},
 		},
+		validateType: 'object',
+	},
+	{
+		displayName: 'Private Metadata',
+		name: 'privateMetadata',
+		type: 'json',
+		default: '{}',
+		description: 'The private metadata for the user',
+		displayOptions: {
+			show: {
+				resource: ['users-api'],
+				operation: ['create-user', 'update-user'],
+			},
+		},
+		validateType: 'object',
 	},
 	{
 		displayName: 'Delete Self Enabled',
